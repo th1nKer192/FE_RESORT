@@ -22,20 +22,20 @@
 					</router-link>
 				</li>
 				<li class="nav-item">
-					<router-link to="/khach-hang/mon-an">
-						<a class="nav-link" href="/khach-hang/mon-an">
-							<div class="parent-icon"><i class="fa-solid fa-utensils"></i>
+					<router-link to="/khach-hang/resort">
+						<a class="nav-link" href="/khach-hang/resort"><i class="fa-solid fa-shop"></i>
+							<div class="parent-icon">
 							</div>
-							<div class="menu-title">Món Ăn</div>
+							<div class="menu-title">Resort</div>
 						</a>
 					</router-link>
 				</li>
 				<li class="nav-item">
-					<router-link to="/khach-hang/quan-an">
-						<a class="nav-link" href="/khach-hang/quan-an">
-							<div class="parent-icon"><i class="fa-solid fa-shop"></i>
+					<router-link to=" ">
+						<a class="nav-link" href=" ">
+							<div class="parent-icon"><i class="fa-solid fa-utensils"></i>
 							</div>
-							<div class="menu-title">Quán Ăn</div>
+							<div class="menu-title">Dịch Vụ</div>
 						</a>
 					</router-link>
 				</li>
@@ -53,7 +53,7 @@
 						<a class="nav-link" href="/khach-hang/don-hang">
 							<div class="parent-icon"><i class="fa-solid fa-file-invoice"></i>
 							</div>
-							<div class="menu-title">Đơn Hàng</div>
+							<div class="menu-title">Đơn Đặt Phòng</div>
 						</a>
 					</router-link>
 				</li>

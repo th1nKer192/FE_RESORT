@@ -16,7 +16,8 @@
                                     <i class="fa-brands fa-square-web-awesome-stroke text-warning"></i>
                                 </h2>
                                 <span class="text-white">
-                                    Website chuyên cung cấp cho bạn địa điểm nghỉ dưỡng tuyệt vời để bạn có thể trải nghiệm!
+                                    Website chuyên cung cấp cho bạn địa điểm nghỉ dưỡng tuyệt vời để bạn có thể trải
+                                    nghiệm!
                                 </span>
                                 <p class="mt-4"><button class="btn btn-outline-light rounded-4"> <b>TRẢI NGHIỆM
                                             NGAY</b> </button></p>
@@ -37,10 +38,12 @@
                                     <i class="fa-brands fa-square-web-awesome-stroke text-warning"></i>
                                 </h2>
                                 <span class="text-dark">
-                                    Giảm đến 50% phí dịch vụ cho tất cả các khu nghỉ dưỡng. Hàng ngàn món ăn ngon đang chờ bạn khám
+                                    Giảm đến 50% phí dịch vụ cho tất cả các khu nghỉ dưỡng. Hàng ngàn món ăn ngon đang
+                                    chờ bạn khám
                                     phá! Nhanh tay đặt ngay để không bỏ lỡ!
                                 </span>
-                                <p class="mt-4"><button class="btn btn-outline-dark rounded-4"> <b>ĐẶT PHÒNG NGAY</b> </button></p>
+                                <p class="mt-4"><button class="btn btn-outline-dark rounded-4"> <b>ĐẶT PHÒNG NGAY</b>
+                                    </button></p>
                             </div>
                         </div>
                         <div class="col-6">
@@ -91,56 +94,55 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
     <div class="row mt-4">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <h5 class="mt-2 text-danger">
-                                Danh Mục Các Món Ăn <i class="fa-solid fa-bowl-food ms-1"></i>
-                            </h5>
+                    <div class="row mb-3">
+                        <div class="col-lg-12">
+                            <h3 class="mt-2 text-danger text-center">
+                                Đặt Phòng <i class="fa-solid fa-bowl-food ms-1"></i>
+                            </h3>
                         </div>
-                        <div class="col-lg-2">
-                            <div>
-                                <select class="form-select" aria-label="Default select example">
-                                    <option value="">-- Danh Mục Món Ăn --</option>
-                                    <template v-for="(v, k) in phanLoai" :key="k">
-                                        <option :value="v.id">{{ v.ten_phan_loai }}</option>
-                                    </template>
-                                </select>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <label for="">Từ ngày</label>
+                                <input type="date" class="form-control mt-2 mb-2" v-model="day_begin">
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <label for="">Đến ngày</label>
+                                <input type="date" class="form-control mt-2" v-model="day_end">
                             </div>
                         </div>
-                        <div class="col-lg-2">
-                            <div class="btn-group w-100" role="group">
-                                <button type="button" class="btn btn-white w-100">Chọn Mức Giá</button>
-                                <div class="btn-group" role="group">
-                                    <button id="btnGroupDrop1" type="button"
-                                        class="btn btn-white dropdown-toggle dropdown-toggle-nocaret px-1"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="bx bx-slider ms-1"></i>
-                                    </button>
-                                    <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="btnGroupDrop1">
-                                        <li><a class="dropdown-item" href="#"
-                                                @click.prevent="filterByPrice('under50')">Dưới 50.000 VNĐ</a></li>
-                                        <li><a class="dropdown-item" href="#"
-                                                @click.prevent="filterByPrice('50to100')">50.000 - 100.000 VNĐ</a>
-                                        </li>
-                                        <li><a class="dropdown-item" href="#"
-                                                @click.prevent="filterByPrice('100to200')">100.000 - 200.000
-                                                VNĐ</a></li>
-                                        <li><a class="dropdown-item" href="#"
-                                                @click.prevent="filterByPrice('200to300')">200.000 - 300.000
-                                                VNĐ</a></li>
-                                        <li><a class="dropdown-item" href="#"
-                                                @click.prevent="filterByPrice('above300')">Trên 300.000 VNĐ</a>
-                                        </li>
-                                    </ul>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label for="">Chọn Thành Phố</label>
+                                <div>
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option value="">-- Chọn Thành Phố --</option>
+                                        <template>
+                                            <option></option>
+                                        </template>
+                                    </select>
                                 </div>
                             </div>
-
+                            <div class="col-lg-6">
+                                <label for="">Số lượng</label>
+                                <div class="btn-group w-100" role="group">
+                                    <button type="button" class="btn btn-white w-100">2 Người Lớn, 0 Trẻ Em - 1 Phòng</button>
+                                    <div class="btn-group" role="group">
+                                        <button id="btnGroupDrop1" type="button"
+                                            class="btn btn-white dropdown-toggle dropdown-toggle-nocaret px-1"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class="bx bx-slider ms-1"></i>
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="btnGroupDrop1">
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -164,7 +166,7 @@
                                         </p>
                                         <div class="d-flex align-items-center mt-auto">
                                             <i class="fa-solid fa-tag text-danger me-2"></i>
-                                            <span class="text-primary">-30%</span>
+                                            <span class="text-primary">-32%</span>
                                         </div>
                                     </div>
                                 </div>
@@ -182,7 +184,7 @@
     <div class="row mt-4">
         <div class="col-lg-12 text-center">
             <div class="d-inline-block">
-                <h4><b>QUÁN ĂN ĐƯỢC YÊU THÍCH NHIỀU NHẤT</b></h4>
+                <h4><b>BLOG</b></h4>
                 <div class="text-center">
                     <hr class="bg-primary my-2" style="width: 100%; height: 3px; border: none; border-radius: 5px" />
                 </div>
@@ -235,7 +237,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="mt-3"><b class="">VOUCHER HẤP DẪN KHI ĐẶT MÓN</b></h5>
+                    <h5 class="mt-3"><b class="">VOUCHER HẤP DẪN KHI ĐẶT RESORT</b></h5>
                 </div>
                 <div class="card-body">
                     <div class="row product-grid">
@@ -436,246 +438,109 @@ export default {
 
             originalMonAnData: [
                 {
-                    ten_mon_an: "Phở Bò",
+                    ten_mon_an: "TP. Hồ Chí Minh",
                     id_quan_an: 1,
-                    ten_quan_an: "Quán Phở Gia Truyền",
-                    gia_ban: 50000,
-                    gia_khuyen_mai: 45000,
+                    ten_quan_an: "15,546 chỗ",
+                    gia_ban: 300000,
+                    gia_khuyen_mai: 270000,
                     hinh_anh:
-                        "https://hongphatfood.com/wp-content/uploads/2020/05/vifon-beef-pho-6.jpg",
+                        "https://divui.com/blog/wp-content/uploads/2018/08/Du-lich-Sai-Gon.jpg",
                 },
                 {
-                    ten_mon_an: "Bún Chả",
+                    ten_mon_an: "Vũng Tàu",
                     id_quan_an: 1,
-                    ten_quan_an: "Quán Phở Gia Truyền",
-                    gia_ban: 40000,
-                    gia_khuyen_mai: 35000,
+                    ten_quan_an: "6,329 chỗ",
+                    gia_ban: 2500000,
+                    gia_khuyen_mai: 1999999,
                     hinh_anh:
-                        "https://cdn2.fptshop.com.vn/unsafe/1920x0/filters:quality(100)/2024_1_12_638406880045931692_cach-lam-bun-cha-ha-noi-0.jpg",
+                        "https://www.tienland.vn/media/uploads/uploads/25113751-ba-ria-vung-tau.jpg",
                 },
                 {
-                    ten_mon_an: "Bánh Canh",
+                    ten_mon_an: "Đà Nẵng",
                     id_quan_an: 1,
-                    ten_quan_an: "Quán Phở Gia Truyền",
+                    ten_quan_an: "5,534 chỗ",
                     gia_ban: 30000,
                     gia_khuyen_mai: 25000,
                     hinh_anh:
-                        "https://cdn.tgdd.vn/2020/11/CookRecipe/GalleryStep/thanh-pham-622.jpg",
+                        "https://media2.gody.vn/public/images/destination/1/48/cau-rong-da-nang/pl618f263bb7134-1636771387.jpeg",
                 },
                 {
-                    ten_mon_an: "Chả Cá",
+                    ten_mon_an: "Hà Nội",
                     id_quan_an: 1,
-                    ten_quan_an: "Quán Phở Gia Truyền",
+                    ten_quan_an: "10,329 chỗ",
                     gia_ban: 60000,
                     gia_khuyen_mai: 55000,
                     hinh_anh:
-                        "https://i.ytimg.com/vi/ZLwCwyIDJJ4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLC28T49o72JuvhoihtNNUQvmAyCWA",
+                        "https://cloudcdnvod.tek4tv.vn/Mam/attach/upload/06112024170600/170601_webdscf230217098688013631709868804633548541249.jpg",
                 },
 
                 {
-                    ten_mon_an: "Bánh Mì Thịt",
+                    ten_mon_an: "Đà Lạt",
                     id_quan_an: 2,
-                    ten_quan_an: "Tiệm Bánh Mì Ngon",
+                    ten_quan_an: "8,329 chỗ",
                     gia_ban: 20000,
                     gia_khuyen_mai: 18000,
                     hinh_anh:
-                        "https://cdn2.fptshop.com.vn/unsafe/1920x0/filters:quality(100)/2024_1_11_638406025402324906_banh-mi-thit_.jpg",
+                        "https://th.bing.com/th/id/OIP.MBP9gKqcNhXgL71tXdSTjgHaE7?rs=1&pid=ImgDetMain",
                 },
                 {
-                    ten_mon_an: "Gỏi Cuốn",
+                    ten_mon_an: "Nha Trang",
                     id_quan_an: 2,
-                    ten_quan_an: "Tiệm Bánh Mì Ngon",
+                    ten_quan_an: "2,329 chỗ",
                     gia_ban: 15000,
                     gia_khuyen_mai: 12000,
-                    hinh_anh: "https://heyyofoods.com/wp-content/uploads/2024/03/3-4.jpg",
+                    hinh_anh: "https://a.cdn-hotels.com/gdcs/production85/d1610/b384252c-2359-4ab8-b054-528d34450ca1.jpg?impolicy=fcrop&w=1600&h=1066&q=medium",
                 },
                 {
-                    ten_mon_an: "Mì Quảng",
+                    ten_mon_an: "Phan Thiết",
                     id_quan_an: 2,
-                    ten_quan_an: "Tiệm Bánh Mì Ngon",
+                    ten_quan_an: "1,329 chỗ",
                     gia_ban: 35000,
                     gia_khuyen_mai: 30000,
                     hinh_anh:
-                        "https://duonggiahotel.vn/wp-content/uploads/2023/09/mi-quang-da-nang-AB.jpg",
+                        "https://ik.imagekit.io/tvlk/blog/2023/05/du-lich-phan-thiet-tu-tuc-4.jpeg?tr=dpr-2,w-675",
                 },
                 {
-                    ten_mon_an: "Bánh Bèo",
+                    ten_mon_an: "Hội An",
                     id_quan_an: 2,
-                    ten_quan_an: "Tiệm Bánh Mì Ngon",
-                    gia_ban: 15000,
-                    gia_khuyen_mai: 13000,
-                    hinh_anh:
-                        "https://vietfood.org.vn/wp-content/uploads/2021/05/BanhBeo2.jpg",
-                },
-
-                {
-                    ten_mon_an: "Cơm Gà",
-                    id_quan_an: 3,
-                    ten_quan_an: "Cơm Gà Hải Nam",
-                    gia_ban: 35000,
-                    gia_khuyen_mai: 30000,
-                    hinh_anh:
-                        "https://danangfantasticity.com/wp-content/uploads/2024/10/com-ga-da-nang-com-ga-xoi-mo-09.jpg",
-                },
-                {
-                    ten_mon_an: "Bánh Xèo",
-                    id_quan_an: 3,
-                    ten_quan_an: "Cơm Gà Hải Nam",
-                    gia_ban: 45000,
-                    gia_khuyen_mai: 40000,
-                    hinh_anh:
-                        "https://daotaobeptruong.vn/wp-content/uploads/2020/01/cach-do-banh-xeo-ngon-gion-lau.jpg",
-                },
-                {
-                    ten_mon_an: "Cơm Tấm",
-                    id_quan_an: 3,
-                    ten_quan_an: "Cơm Gà Hải Nam",
+                    ten_quan_an: "3,329 chỗ",
                     gia_ban: 40000,
-                    gia_khuyen_mai: 37000,
+                    gia_khuyen_mai: 35000,
                     hinh_anh:
-                        "https://i-giadinh.vnecdn.net/2024/03/07/7-Hoan-thien-thanh-pham-1-6244-1709800134.jpg",
+                        "https://www.tonkinvoyage.com/upload/tonkin/Blog/hoian/hoi-an.jpg",
                 },
                 {
-                    ten_mon_an: "Gà Rán",
-                    id_quan_an: 3,
-                    ten_quan_an: "Cơm Gà Hải Nam",
-                    gia_ban: 70000,
-                    gia_khuyen_mai: 65000,
-                    hinh_anh:
-                        "https://cokhiviendong.com/wp-content/uploads/2019/01/kinnh-nghi%E1%BB%87m-m%E1%BB%9F-qu%C3%A1n-g%C3%A0-r%C3%A1n-7.jpg",
-                },
-                {
-                    ten_mon_an: "Hủ Tiếu",
-                    id_quan_an: 4,
-                    ten_quan_an: "Hủ Tiếu Mỹ Tho",
-                    gia_ban: 30000,
-                    gia_khuyen_mai: 25000,
-                    hinh_anh:
-                        "https://i-giadinh.vnecdn.net/2023/05/15/Bc8Thnhphm18-1684125639-9811-1684125654.jpg",
-                },
-                {
-                    ten_mon_an: "Lẩu Thái",
-                    id_quan_an: 4,
-                    ten_quan_an: "Hủ Tiếu Mỹ Tho",
-                    gia_ban: 120000,
-                    gia_khuyen_mai: 100000,
-                    hinh_anh:
-                        "https://i-giadinh.vnecdn.net/2022/12/17/Thanh-pham-1-1-5372-1671269525.jpg",
-                },
-                {
-                    ten_mon_an: "Bún Mắm",
-                    id_quan_an: 4,
-                    ten_quan_an: "Hủ Tiếu Mỹ Tho",
+                    ten_mon_an: "Cần Thơ",
+                    id_quan_an: 2,
+                    ten_quan_an: "4,329 chỗ",
                     gia_ban: 50000,
                     gia_khuyen_mai: 45000,
                     hinh_anh:
-                        "https://www.cet.edu.vn/wp-content/uploads/2018/04/bun-mam-nem-da-nang.jpg",
+                        "https://ik.imagekit.io/tvlk/blog/2023/05/du-lich-phan-thiet-tu-tuc-4.jpeg?tr=dpr-2,w-675",
                 },
                 {
-                    ten_mon_an: "Súp Cua",
-                    id_quan_an: 4,
-                    ten_quan_an: "Hủ Tiếu Mỹ Tho",
-                    gia_ban: 40000,
-                    gia_khuyen_mai: 35000,
+                    ten_mon_an: "Hải Phòng",
+                    id_quan_an: 2,
+                    ten_quan_an: "7,329 chỗ",
+                    gia_ban: 60000,
+                    gia_khuyen_mai: 55000,
                     hinh_anh:
-                        "https://mevacon.giaoduc.edu.vn/wp-content/uploads/2023/02/cach-nau-sup-cua-1.jpeg",
-                },
-
-                {
-                    ten_mon_an: "Cháo Lòng",
-                    id_quan_an: 5,
-                    ten_quan_an: "Quán Cháo Lòng Ngon",
-                    gia_ban: 25000,
-                    gia_khuyen_mai: 22000,
-                    hinh_anh:
-                        "https://static.vinwonders.com/production/chao-long-da-nang-4-1.jpg",
+                        "https://ik.imagekit.io/tvlk/blog/2023/05/du-lich-phan-thiet-tu-tuc-4.jpeg?tr=dpr-2,w-675",
                 },
                 {
-                    ten_mon_an: "Nem Nướng",
-                    id_quan_an: 5,
-                    ten_quan_an: "Quán Cháo Lòng Ngon",
-                    gia_ban: 40000,
-                    gia_khuyen_mai: 35000,
+                    ten_mon_an: "Ninh Bình",
+                    id_quan_an: 2,
+                    ten_quan_an: "9,329 chỗ",
+                    gia_ban: 70000,
+                    gia_khuyen_mai: 65000,
                     hinh_anh:
-                        "https://cdn.tgdd.vn/2021/09/CookDish/cach-lam-nem-nuong-nha-trang-bang-noi-chien-khong-dau-thom-avt-1200x676.jpg",
-                },
-                {
-                    ten_mon_an: "Bánh Đúc",
-                    id_quan_an: 5,
-                    ten_quan_an: "Quán Cháo Lòng Ngon",
-                    gia_ban: 20000,
-                    gia_khuyen_mai: 18000,
-                    hinh_anh:
-                        "https://i-giadinh.vnecdn.net/2021/05/17/1-1621220538-7560-1621220858.jpg",
-                },
-                {
-                    ten_mon_an: "Bánh Cuốn",
-                    id_quan_an: 5,
-                    ten_quan_an: "Quán Cháo Lòng Ngon",
-                    gia_ban: 30000,
-                    gia_khuyen_mai: 27000,
-                    hinh_anh:
-                        "https://img-global.cpcdn.com/recipes/b235f5db0142062d/400x400cq70/photo.jpg",
-                },
-                {
-                    ten_mon_an: "Combo Gà Rán và Khoai Tây",
-                    id_quan_an: 6,
-                    ten_quan_an: "Chicken House",
-                    gia_ban: 150000,
-                    gia_khuyen_mai: 130000,
-                    hinh_anh:
-                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6ujAHUkTeiROINht5b1qDd__UGoc9Mnbx5w&s",
-                },
-                {
-                    ten_mon_an: "Combo Bò Lúc Lắc và Salad",
-                    id_quan_an: 7,
-                    ten_quan_an: "Steak Corner",
-                    gia_ban: 180000,
-                    gia_khuyen_mai: 160000,
-                    hinh_anh:
-                        "https://blog.nhahanggiobien.com/wp-content/uploads/2021/12/BO-LUC-LAC-KHOAI-TAY.jpg",
-                },
-                {
-                    ten_mon_an: "Combo Lẩu Thái và Hải Sản",
-                    id_quan_an: 8,
-                    ten_quan_an: "Lẩu Thái Tomyum",
-                    gia_ban: 250000,
-                    gia_khuyen_mai: 220000,
-                    hinh_anh:
-                        "https://bizweb.dktcdn.net/100/090/383/files/01-combo-haisan-1.jpg?v=1586015019703",
-                },
-                {
-                    ten_mon_an: "Combo Sushi Đặc Biệt",
-                    id_quan_an: 9,
-                    ten_quan_an: "Sushi World",
-                    gia_ban: 280000,
-                    gia_khuyen_mai: 260000,
-                    hinh_anh:
-                        "https://ichibanmarket.com.vn/wp-content/uploads/2023/08/131-3.jpg",
-                },
-                {
-                    ten_mon_an: "Combo Lẩu Nướng và Thịt Tổng Hợp",
-                    id_quan_an: 10,
-                    ten_quan_an: "BBQ Paradise",
-                    gia_ban: 350000,
-                    gia_khuyen_mai: 320000,
-                    hinh_anh:
-                        "https://channel.mediacdn.vn/prupload/879/2017/09/img20170917232722780.jpg",
-                },
-                {
-                    ten_mon_an: "Combo Tiệc 5 Món Cao Cấp",
-                    id_quan_an: 11,
-                    ten_quan_an: "Fine Dining Restaurant",
-                    gia_ban: 500000,
-                    gia_khuyen_mai: 450000,
-                    hinh_anh:
-                        "https://thietbidungcubuffet.com/images/tin-tuc/mon-ngon-dai-tiec-cuoi.jpg",
+                        "https://ik.imagekit.io/tvlk/blog/2023/05/du-lich-phan-thiet-tu-tuc-4.jpeg?tr=dpr-2,w-675",
                 },
             ],
 
             list_voucher: [
                 {
-                    anh: "https://mms.img.susercontent.com/vn-11134512-7ras8-m4rbu9mg5dcfd2@resize_ss320x320!@crop_w320_h320_cT",
+                    anh: "https://cdn6.agoda.net/images/WebCampaign/dealspagebanner_hp_web/vi-vn.png",
                     ten_voucher: "Giảm giá 50%",
                     dia_diem: 150,
                 },

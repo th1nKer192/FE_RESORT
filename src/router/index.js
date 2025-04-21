@@ -2,7 +2,6 @@ import { createRouter, createWebHistory } from "vue-router"; // cài vue-router:
 import checkNhanVienLogin from "./checkNhanVienLogin";
 import checkKhachHang from "./checkKhachHang";
 import checkQuanAn from "./checkQuanAn";
-import checkShipper from "./checkShipper";
 const routes = [
 	// Admin
 	{
@@ -23,11 +22,6 @@ const routes = [
 	{
 		path: "/admin/quan-an",
 		component: () => import("../components/Admin/QuanAn/index.vue"),
-		beforeEnter: checkNhanVienLogin,
-	},
-	{
-		path: "/admin/shipper",
-		component: () => import("../components/Admin/Shipper/index.vue"),
 		beforeEnter: checkNhanVienLogin,
 	},
 	{
@@ -68,8 +62,8 @@ const routes = [
 		meta: { layout: "blank" },
 	},
 	{
-		path: "/khach-hang/quan-an",
-		component: () => import("../components/KhachHang/QuanAn/index.vue"),
+		path: "/khach-hang/resort",
+		component: () => import("../components/KhachHang/Resort/index.vue"),
 		meta: { layout: "client" },
 	},
 	{
@@ -83,7 +77,7 @@ const routes = [
 		meta: { layout: "client" },
 		beforeEnter: checkKhachHang,
 	},
-	// Từng quán nội dung hiển thị sẽ khác nhau. Giống về cấu trúc
+	// Từng resort nội dung hiển thị sẽ khác nhau. Giống về cấu trúc
 	// Làm sao để ta biết là khác nhau ra sao => dựa vào id_resort
 	{
 		path: "/khach-hang/don-dat-hang/:id_quan",
@@ -164,27 +158,6 @@ const routes = [
 		beforeEnter: checkQuanAn,
 	},
 	// Shipper
-	{
-		path: "/shipper/dang-ky",
-		component: () => import("../components/Shipper/DangKy/index.vue"),
-		meta: { layout: "blank" },
-	},
-	{
-		path: "/shipper/dang-nhap",
-		component: () => import("../components/Shipper/DangNhap/index.vue"),
-		meta: { layout: "blank" },
-	},
-	{
-		path: "/shipper/don-hang",
-		component: () => import("../components/Shipper/DonHang/index.vue"),
-		meta: { layout: "shipper" },
-	},
-	{
-		path: "/shipper/profile",
-		component: () => import("../components/Shipper/Profile/index.vue"),
-		meta: { layout: "shipper" },
-		beforeEnter: checkShipper,
-	},
 ];
 
 const router = createRouter({
